@@ -1,0 +1,34 @@
+version: '3'
+services:
+  swagger-ui:
+    image: teamd2018/swagger-ui-geo-rest:latest
+    ports:
+    - 8080:8080
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+    networks:
+    - geo-rest
+  elastic-admin:
+    image: appbaseio/dejavu:2.0.0
+    ports:
+      - 1358:1358
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+    networks:
+    - geo-rest
+  tarantool:
+    image: tarantool/tarantool:2
+    ports:
+      - 3301:3301
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+    networks:
+    - geo-rest
+networks:
+  geo-rest
