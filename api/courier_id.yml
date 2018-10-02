@@ -3,7 +3,7 @@ get:
   description: |
     Get relevant information about courier by id.
   parameters:
-  - $ref: 'parameters.yml#/DeliveryClubID'
+  - $ref: 'parameters.yml#/CourierID'
   responses:
     '200':
       description: Ok
@@ -28,13 +28,13 @@ put:
   description: |
     Updates courier parameters. It's the only way to update courier location.
   parameters:
-  - $ref: 'parameters.yml#/DeliveryClubID'
+  - $ref: 'parameters.yml#/CourierID'
   requestBody:
     description: Courier fields to update
     content:
       application/json:
         schema:
-          $ref: 'schemas.yml#/CourierBase'
+          $ref: 'schemas.yml#/CourierUpdate'
   responses:
     '200':
       description: Ok
@@ -59,7 +59,7 @@ delete:
   description: |
     Delete all information about courier from the service, including orders history.
   parameters:
-  - $ref: 'parameters.yml#/DeliveryClubID'
+  - $ref: 'parameters.yml#/CourierID'
   responses:
     '204':
       description: Successfull delete

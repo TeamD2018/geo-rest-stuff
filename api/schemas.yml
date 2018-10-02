@@ -1,81 +1,99 @@
-CourierBase:
+CourierCreate:
   description: Basic courier properties
   properties:
-    id:
-      type: integer
-      format: int64
-      example: 42
-      readOnly: true
     name:
       type: string
       example: Иван
-    location:
-      description: Current courier location
-      $ref: '#/Location'
     phone:
       description: Phone number in international format (without '+')
       type: string
       example: '79012345678'
-    last_seen:
-      description: Time in UTC format(ms)
-      type: integer
-      format: int64
-      example: 1234567891
-
-Courier:
-  description: Strict courier schema
-  allOf:
-  - $ref: '#/CourierBase'
   required:
   - name
   - phone
 
-OrderBase:
-  description: Basic courier fields
+
+CourierUpdate:
+  description: Courier schema which is possible to update
+  allOf:
+  - $ref: '#/CourierCreate'
+  - type: object
+    properties:
+      location:
+        description: Current courier location
+        $ref: '#/Location'
+
+
+Courier:
+  description: Complete courier description
+  allOf:
+  - $ref: '#/CourierUpdate'
+  - type: object
+    properties:
+      last_seen:
+        description: Time in UTC format(ms)
+        type: integer
+        format: int64
+        example: 1234567891
+      id:
+        type: string
+        example: 550e8400-e29b-41d4-a716-446655440000
+        readOnly: true
+  required:
+  - name
+  - phone
+
+
+
+OrderCreate:
+  description: Basic order properties
   properties:
-    id:
-      description: Order id
-      type: integer
-      format: int64
-      readOnly: true
-    courier_id:
-      description: Courier id
-      type: integer
-      format: int64
-      readOnly: true
-    created:
-      description: Order creation time in UTC format(ms)
-      type: integer
-      format: int64
-      readOnly: true
-    done:
-      description: Order cancellation time in UTC format(ms)
-      type: integer
-      format: int64
     destination:
       $ref: '#/Location'
     soruce:
       $ref: '#/Location'
-
-Order:
-  description: Strict order schema
-  allOf:
-  - $ref: '#/OrderBase'
   required:
   - destination
   - source
 
-OrderFull:
-  description: Strict aggregate order schema
+OrderUpdate:
+  description: Order schema which is possible to update
   allOf:
-  - $ref: '#/Order'
-  properties:
-    courier:
-      description: Full information about assigned courier
-      $ref: '#/Courier'
+  - $ref: '#/OrderCreate'
+  - type: object
+    properties:
+      done_at:
+        description: Order cancellation time in UTC format(ms)
+        type: integer
+        format: int64
+      courier_id:
+        description: Courier id
+        type: 550e8400-e29b-41d4-a716-446655440000
+        format: int64
+        readOnly: true
+
+Order:
+  description: Complete order description
+  allOf:
+  - $ref: '#/OrderUpdate'
+  - type: object
+    properties:
+      id:
+        description: Order id
+        type: string
+        format: int64
+        readOnly: true
+  required:
+  - destination
+  - source
+  - id
+  - created_at
+  - courier_id
+
+
 
 Location:
-  description: Geo-point (longitude, latitude)
+  description: Geo-point (longitude, latitude) or google-geocoder-readable address
   properties:
     lat:
       description: Latitude

@@ -1,7 +1,7 @@
 get:
   summary: Get orders for courier
   parameters:
-  - $ref: 'parameters.yml#/DeliveryClubID'
+  - $ref: 'parameters.yml#/CourierID'
   - name: since
     description: |
       Time marker in UTC format(ms)

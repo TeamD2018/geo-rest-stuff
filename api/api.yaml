@@ -16,16 +16,20 @@ paths:
 components:
   parameters:
     DeliveryClubID:
-      $ref: 'parameters.yml#/DeliveryClubID'
+      $ref: 'parameters.yml#/CourierID'
     OrderID:
       $ref: 'parameters.yml#/OrderID'
   schemas:
-    CourierBase:
-      $ref: 'schemas.yml#/CourierBase'
+    CourierCreate:
+      $ref: 'schemas.yml#/CourierCreate'
+    CourierUpdate:
+      $ref: 'schemas.yml#/CourierUpdate'
     Courier:
       $ref: 'schemas.yml#/Courier'
-    OrderBase:
-      $ref: 'schemas.yml#/OrderBase'
+    OrderCreate:
+      $ref: 'schemas.yml#/OrderCreate'
+    OrderUpdate:
+      $ref: 'schemas.yml#/OrderUpdate'
     Order:
       $ref: 'schemas.yml#/Order'
     Location:
