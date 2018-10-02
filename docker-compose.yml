@@ -31,5 +31,6 @@ services:
     networks:
     - geo-rest
 networks:
-  geo-rest:
-    name: geo-rest
+  default:
+    external:
+      name: geo-rest
