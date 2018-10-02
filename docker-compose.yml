@@ -31,4 +31,4 @@ services:
     networks:
     - geo-rest
 networks:
-  geo-rest
+  geo-rest:
