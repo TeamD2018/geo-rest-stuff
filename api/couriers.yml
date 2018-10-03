@@ -7,7 +7,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: 'schemas.yml#/Courier'
+          $ref: 'schemas.yml#/CourierCreate'
   responses:
     '201':
       description: Courier created

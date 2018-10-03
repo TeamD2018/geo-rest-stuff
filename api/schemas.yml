@@ -62,7 +62,7 @@ OrderUpdate:
   - $ref: '#/OrderCreate'
   - type: object
     properties:
-      done_at:
+      delivered_at:
         description: Order cancellation time in UTC format(ms)
         type: integer
         format: int64

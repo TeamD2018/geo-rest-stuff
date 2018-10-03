@@ -8,7 +8,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: 'schemas.yml#/Order'
+          $ref: 'schemas.yml#/OrderCreate'
   responses:
     '201':
       description: Ok
