@@ -8,7 +8,7 @@ paths:
     $ref: 'couriers.yml'
   '/couriers/{courier_id}':
     $ref: 'courier_id.yml'
-  '/couriers/{courier_id}/orders/{order_id}':
+  '/couriers/{courier_id}/orders':
     $ref: 'courier_order.yml'
   '/courier/{courier_id}/orders':
     $ref: 'courier_orders.yml'
