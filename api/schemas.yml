@@ -50,7 +50,7 @@ OrderCreate:
   properties:
     destination:
       $ref: '#/Location'
-    soruce:
+    source:
       $ref: '#/Location'
   required:
   - destination
