@@ -3,7 +3,6 @@ post:
   description: |
     Create new order. The courier with courier_id MUST be created before this operation.
   parameters:
-  - $ref: 'parameters.yml#/OrderID'
   - $ref: 'parameters.yml#/CourierID'
   requestBody:
     content:
