@@ -1,20 +1,18 @@
-DeliveryClubID:
+CourierID:
   schema:
-    type: integer
-    format: int64
+    type: string
   in: path
   name: courier_id
   required: true
-  description: Delivery Club courier id
+  description: UUID of courier
 
 OrderID:
   schema:
-    type: integer
-    format: int64
+    type: string
   in: path
   name: order_id
   required: true
-  description: Delivery Club order id
+  description: UUID of order
 
 GeoFilter:
   in: query
