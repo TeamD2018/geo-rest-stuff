@@ -25,4 +25,3 @@ GeoFilter:
     oneOf:
     - $ref: 'schemas.yml#/Circle'
     - $ref: 'schemas.yml#/Box'
-    - $ref: 'schemas.yml#/Zone'

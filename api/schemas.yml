@@ -93,21 +93,26 @@ Order:
 
 
 Location:
-  description: Geo-point (longitude, latitude) or google-geocoder-readable address
+  description: Geo-point (longitude, latitude) or address
+  properties:
+    point:
+      $ref: '#/Point'
+    address:
+      description: Address in google-geocoder-readable format
+      type: string
+      example: 1600 Amphitheatre Pkwy, Mountain View, CA 94043, США
+
+Point:
+  description: Geo-point (longitude, latitude)
   properties:
     lat:
-      description: Latitude
-      type: number
-      format: float
-      example: 55.79727
+      type: numeric
+      format: float64
+      example: 37.4231778
     lon:
-      description: Longitude
-      type: number
-      format: float
-      example: 37.537789
-  required:
-  - lat
-  - lon
+      type: numeric
+      format: float64
+      example: -122.0852514
 
 Couriers:
   type: array
@@ -148,24 +153,6 @@ Box:
   required:
   - bottom_right
   - top_left
-
-Zone:
-  type: object
-  description: |
-    Circle area with center defined by some address
-  properties:
-    center:
-      type: string
-      description: Address in format accepted by google geocoding service
-      example: Красная пл., 3, город Москва, Россия, 109012
-    radius:
-      description: Zone radius in meters
-      type: number
-      format: float
-      example: 500
-  required:
-  - center
-  - radius
 
 Error:
   required:
