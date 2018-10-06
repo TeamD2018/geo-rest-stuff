@@ -7,7 +7,7 @@ COPY /api /foo
 WORKDIR /foo
 
 RUN swagger-cli validate api.yaml && \
- swagger-cli bundle -o api.bundle.yaml api.yaml
+ swagger-cli bundle -t yaml -o api.bundle.yaml api.yaml
 
 ENV SWAGGER_JSON "/foo/api.bundle.yaml"
 
