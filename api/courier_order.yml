@@ -64,6 +64,36 @@ patch:
           schema:
             $ref: 'schemas.yml#/Error'
 
+get:
+  summary: Get order by id
+  description: |
+    Get order identified by (courier_id, order_id) pair. If any of (courier_id, order_id) doesn't exists, then 404 error
+    will be returned.
+  parameters:
+  - $ref: 'parameters.yml#/OrderID'
+  - $ref: 'parameters.yml#/CourierID'
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yml#/Order'
+    '404':
+      description: Any of courier_id or order_id wasn't found
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yml#/Error'
+    '500':
+      description: Server internal error
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yml#/Error'
+
+
+
 delete:
   summary: Delete order
   description: |
