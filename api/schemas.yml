@@ -124,6 +124,11 @@ Orders:
   items:
     $ref: '#/Order'
 
+Points:
+  type: array
+  items:
+    $ref: '#/Point'
+
 Circle:
   type: object
   description: |
@@ -174,3 +179,18 @@ Error:
   - Sorry, server error
   - One of parameters not found
   - One of parameter have incorrect format
+
+CouriersSuggestion:
+  type: object
+  description: |
+    Prefixes of courier's parameters
+  properties:
+    phone_prefix:
+      type: string
+      description: Phone parameter prefix
+      example: +1234
+    name_prefix:
+      type: string
+      description: Name parameter prefix
+      example: Jo
+

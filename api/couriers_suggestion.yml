@@ -1,0 +1,35 @@
+get:
+  summary: Search by incomplete courier's parameteres
+  description: |
+    Get set of couriers based on phone or name prefix. Returns empty array if nothing was found.
+  parameters:
+  - $ref: 'parameters.yml#/CouriersSuggestion'
+  - in: query
+    name: limit
+    schema:
+      type: integer
+      format: int32
+      default: 200
+      maximum: 200
+      minimum: 1
+    description: |
+      Maximum number of couriers to return.
+  responses:
+    '200':
+      description: Ok
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yml#/Couriers'
+    '400':
+      description: Invalid search parameters
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yml#/Error'
+    '500':
+      description: Server internal error
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yml#/Error'

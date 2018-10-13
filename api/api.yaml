@@ -6,12 +6,17 @@ info:
 paths:
   /couriers:
     $ref: 'couriers.yml'
-  '/couriers/{courier_id}':
+  /couriers/{courier_id}:
     $ref: 'courier_id.yml'
-  '/couriers/{courier_id}/orders/{order_id}':
+  /couriers/{courier_id}/orders/{order_id}:
     $ref: 'courier_order.yml'
-  '/couriers/{courier_id}/orders':
+  /couriers/{courier_id}/orders:
     $ref: 'courier_orders.yml'
+  /couriers/{courier_id}/geo_history:
+    $ref: 'courier_geo_history.yml'
+  /couriers/suggestions:
+    $ref: 'couriers_suggestion.yml'
+
 
 components:
   parameters:

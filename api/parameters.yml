@@ -25,3 +25,12 @@ GeoFilter:
     oneOf:
     - $ref: 'schemas.yml#/Circle'
     - $ref: 'schemas.yml#/Box'
+
+CouriersSuggestion:
+  in: query
+  style: form
+  explode: true
+  description: prefixes of couriers params
+  name: filter
+  schema:
+    $ref: 'schemas.yml#/CouriersSuggestion'
