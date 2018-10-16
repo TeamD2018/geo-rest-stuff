@@ -14,7 +14,7 @@ paths:
     $ref: 'courier_orders.yml'
   /couriers/{courier_id}/geo_history:
     $ref: 'courier_geo_history.yml'
-  /couriers/suggestions:
+  /suggestions/couriers:
     $ref: 'couriers_suggestion.yml'
 
 
