@@ -26,11 +26,13 @@ GeoFilter:
     - $ref: 'schemas.yml#/Circle'
     - $ref: 'schemas.yml#/Box'
 
-CouriersSuggestion:
+Suggestion:
   in: query
+  name: suggestion
   style: form
   explode: true
-  description: prefixes of couriers params
-  name: filter
+  description: |
+    Prefixes of courier's parameters
   schema:
-    $ref: 'schemas.yml#/CouriersSuggestion'
+    $ref: 'schemas.yml#/Suggestion'
+

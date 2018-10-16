@@ -3,17 +3,7 @@ get:
   description: |
     Get set of couriers based on phone or name prefix. Returns empty array if nothing was found.
   parameters:
-  - $ref: 'parameters.yml#/CouriersSuggestion'
-  - in: query
-    name: limit
-    schema:
-      type: integer
-      format: int32
-      default: 200
-      maximum: 200
-      minimum: 1
-    description: |
-      Maximum number of couriers to return.
+  - $ref: 'parameters.yml#/Suggestion'
   responses:
     '200':
       description: Ok

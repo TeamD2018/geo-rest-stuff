@@ -180,17 +180,19 @@ Error:
   - One of parameters not found
   - One of parameter have incorrect format
 
-CouriersSuggestion:
+Suggestion:
   type: object
-  description: |
-    Prefixes of courier's parameters
   properties:
-    phone_prefix:
+    prefix:
       type: string
-      description: Phone parameter prefix
+      description: Some document's param prefix
       example: +1234
-    name_prefix:
-      type: string
-      description: Name parameter prefix
-      example: Jo
+    limit:
+      description: |
+        Maximum number of couriers to return.
+      type: integer
+      format: int32
+      default: 200
+      maximum: 200
+      minimum: 1
 
