@@ -9,7 +9,7 @@ get:
       content:
         application/json:
           schema:
-            $ref: 'schemas.yml#/Points'
+            $ref: 'schemas.yml#/OrderTracks'
     '404':
       description: Courier not found
       content:

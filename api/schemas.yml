@@ -37,7 +37,7 @@ Courier:
         example: 1234567891
       id:
         type: string
-        example: 550e8400-e29b-41d4-a716-446655440000
+        example: '550e8400-e29b-41d4-a716-446655440000'
         readOnly: true
   required:
   - name
@@ -179,6 +179,23 @@ Error:
   - Sorry, server error
   - One of parameters not found
   - One of parameter have incorrect format
+
+OrderTrack:
+  type: object
+  properties:
+    order_id:
+      type: string
+    history:
+      $ref: '#/Points'
+  required:
+  - order_id
+  - history
+
+OrderTracks:
+  type: array
+  items:
+    $ref: '#/OrderTrack'
+
 
 Suggestion:
   type: object
