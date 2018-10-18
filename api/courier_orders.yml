@@ -55,7 +55,6 @@ get:
     description: |
       Should delivered orders be excluded from response
     in: query
-    default: false
     schema:
       type: boolean
       default: false
