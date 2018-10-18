@@ -33,9 +33,10 @@ get:
   summary: Get orders for courier
   parameters:
   - $ref: 'parameters.yml#/CourierID'
+
   - name: since
     description: |
-      Time marker in UTC format(ms)
+     Time marker as unix timestamp
     in: query
     schema:
       type: integer
@@ -46,10 +47,19 @@ get:
     description: |
       Should time marker be threated as lower bound(true) or upper bound(false)
     in: query
-    required: true
     schema:
       type: boolean
-      default: true
+      default: false
+
+  - name: exclude_delivered
+    description: |
+      Should delivered orders be excluded from response
+    in: query
+    default: false
+    schema:
+      type: boolean
+      default: false
+
 
   responses:
     '200':
