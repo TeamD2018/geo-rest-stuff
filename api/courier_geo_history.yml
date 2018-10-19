@@ -3,6 +3,14 @@ get:
   description: Get courier's location history for current order
   parameters:
   - $ref: 'parameters.yml#/CourierID'
+  - in: query
+    name: since
+    description: Lower bound of history point timestamps
+    schema:
+      type: integer
+      format: int64
+      default: 0
+
   responses:
     '200':
       description: Ok

@@ -129,6 +129,23 @@ Points:
   items:
     $ref: '#/Point'
 
+HistoryPoint:
+  description: Point with timestamp
+  allOf:
+    - $ref: '#/Point'
+    - type: object
+      properties:
+        timestamp:
+          type: integer
+          format: int64
+          example: 1539974560
+          description: Timestamp of point registration
+
+HistoryPoints:
+  type: array
+  items:
+    $ref: '#/HistoryPoint'
+
 Circle:
   type: object
   description: |
@@ -186,7 +203,7 @@ OrderTrack:
     order_id:
       type: string
     history:
-      $ref: '#/Points'
+      $ref: '#/HistoryPoints'
   required:
   - order_id
   - history
