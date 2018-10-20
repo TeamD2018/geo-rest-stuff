@@ -197,23 +197,6 @@ Error:
   - One of parameters not found
   - One of parameter have incorrect format
 
-OrderTrack:
-  type: object
-  properties:
-    order_id:
-      type: string
-    history:
-      $ref: '#/HistoryPoints'
-  required:
-  - order_id
-  - history
-
-OrderTracks:
-  type: array
-  items:
-    $ref: '#/OrderTrack'
-
-
 Suggestion:
   type: object
   properties:
