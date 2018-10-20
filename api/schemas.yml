@@ -131,15 +131,14 @@ Points:
 
 HistoryPoint:
   description: Point with timestamp
-  allOf:
-    - $ref: '#/Point'
-    - type: object
-      properties:
-        timestamp:
-          type: integer
-          format: int64
-          example: 1539974560
-          description: Timestamp of point registration
+  properties:
+    point:
+      $ref: '#/Point'
+    timestamp:
+      type: integer
+      format: int64
+      example: 1539974560
+      description: Timestamp of point registration
 
 HistoryPoints:
   type: array
