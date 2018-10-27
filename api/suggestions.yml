@@ -1,0 +1,27 @@
+get:
+  summary: Omni-search for couriers and orders
+  description: |
+    Search for couriers and orders by providing part of:
+      - courier name
+      - order destination
+  parameters:
+  - $ref: 'parameters.yml#/GenericSuggestRequest'
+  responses:
+    '200':
+      description: Ok
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yml#/Suggestions'
+    '400':
+      description: Invalid search parameters
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yml#/Error'
+    '500':
+      description: Server internal error
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yml#/Error'

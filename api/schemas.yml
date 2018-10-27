@@ -212,3 +212,10 @@ Suggestion:
       maximum: 200
       minimum: 1
 
+Suggestions:
+  type: object
+  properties:
+    couriers:
+      $ref: '#/Couriers'
+    orders:
+      $ref: '#/Orders'

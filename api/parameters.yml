@@ -36,3 +36,9 @@ Suggestion:
   schema:
     $ref: 'schemas.yml#/Suggestion'
 
+
+GenericSuggestRequest:
+  in: query
+  name: input
+  required: true
+  description: Input string to be searched for

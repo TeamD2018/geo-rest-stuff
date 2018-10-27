@@ -16,6 +16,8 @@ paths:
     $ref: 'courier_geo_history.yml'
   /suggestions/couriers:
     $ref: 'couriers_suggestion.yml'
+  /suggestions:
+    $ref: 'suggestions.yml'
 
 
 components:
