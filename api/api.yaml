@@ -26,6 +26,8 @@ components:
       $ref: 'parameters.yml#/CourierID'
     OrderID:
       $ref: 'parameters.yml#/OrderID'
+    GenericSuggestRequest:
+      $ref: 'parameters.yml#/GenericSuggestRequest'
   schemas:
     CourierCreate:
       $ref: 'schemas.yml#/CourierCreate'
@@ -45,6 +47,16 @@ components:
       $ref: 'schemas.yml#/Couriers'
     Orders:
       $ref: 'schemas.yml#/Orders'
+    Suggestions:
+      $ref: 'schemas.yml#/Suggestions'
+    Point:
+      $ref: 'schemas.yml#/Point'
+    HistoryPoint:
+      $ref: 'schemas.yml#/HistoryPoint'
+    Points:
+      $ref: 'schemas.yml#/Points'
+    HistoryPoints:
+      $ref: 'schemas.yml#/HistoryPoints'
     Error:
       $ref: 'schemas.yml#/Error'
 
