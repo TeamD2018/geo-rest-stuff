@@ -10,7 +10,7 @@ RUN swagger-cli validate api.yaml && \
  swagger-cli bundle -t yaml -o api.bundle.yaml api.yaml
 
 ENV SWAGGER_JSON "/foo/api.bundle.yaml"
-ENV BASE_URL "http://dc.utkin.xyz:8080/openapi"
+ENV BASE_URL "/openapi"
 
 EXPOSE 8080
 
