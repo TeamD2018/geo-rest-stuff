@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tarantool
+  labels:
+    app: tarantool
+    tier: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tarantool
+  template:
+    metadata:
+      name: tarantool
+      labels:
+        app: tarantool
+        tier: backend
+    spec:
+      containers:
+      - image: tarantool/tarantool:1.10.2
+        name: tarantool
+        ports:
+        - containerPort: 3301
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "10m"

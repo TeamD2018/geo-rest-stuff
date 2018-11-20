@@ -1,0 +1,15 @@
+[google-maps]
+apikey=""
+
+[cors]
+origins=["http://localhost"]
+
+[server]
+url=":8080"
+
+[elastic]
+url="http://elastic:9200"
+sniff=false
+
+[tarantool]
+url="tarantool:3301"

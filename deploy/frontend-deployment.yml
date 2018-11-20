@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  labels:
+    app: frontend
+    tier: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      name: frontend
+      labels:
+        app: frontend
+        tier: backend
+    spec:
+      containers:
+      - image: teamd2018/courier-monitoring-frontend
+        name: frontend
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "10m"
+        volumeMounts:
+        - mountPath: /etc/caddy
+          name: config
+      volumes:
+      - name: config
+        configMap:
+          name: caddyfile
+          items:
+          - key: Caddyfile
+            path: Caddyfile

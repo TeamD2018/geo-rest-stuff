@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  labels:
+    app: backend
+    tier: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      name: backend
+      labels:
+        app: backend
+        tier: backend
+    spec:
+      containers:
+      - args:
+        - --config=/config/geo_rest_config.toml
+        image: teamd2018/geo-rest
+        name: geo-rest
+        ports:
+        - containerPort: 8080
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "10m"
+        volumeMounts:
+        - mountPath: /config
+          name: config
+      volumes:
+      - name: config
+        configMap:
+          name: geo-rest-config
+          items:
+          - key: geo-rest-config.toml
+            path: geo_rest_config.toml

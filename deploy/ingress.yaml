@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: geo-rest
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  tls:
+  - hosts:
+    - track-delivery.club
+    secretName: track-delivery.club
+  rules:
+  - host: track-delivery.club
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: frontend
+          servicePort: 80
+      - path: /api/v1/
+        backend:
+          serviceName: backend
+          servicePort: 8080
