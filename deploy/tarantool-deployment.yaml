@@ -20,6 +20,17 @@ spec:
       containers:
       - image: tarantool/tarantool:1.10.2
         name: tarantool
+        env:
+        - name: TARANTOOL_USER_NAME
+          valueFrom:
+            secretKeyRef:
+              name: tarantool_secret
+              key: username
+        - name: TARANTOOL_USER_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: tarantool_secret
+              key: password
         ports:
         - containerPort: 3301
         resources:
