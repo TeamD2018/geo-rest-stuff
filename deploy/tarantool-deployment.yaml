@@ -24,12 +24,12 @@ spec:
         - name: TARANTOOL_USER_NAME
           valueFrom:
             secretKeyRef:
-              name: tarantool_secret
+              name: tarantool-secret
               key: username
         - name: TARANTOOL_USER_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: tarantool_secret
+              name: tarantool-secret
               key: password
         ports:
         - containerPort: 3301
