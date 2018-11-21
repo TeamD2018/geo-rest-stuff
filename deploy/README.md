@@ -4,6 +4,11 @@ kubectl create configmap caddyfile --from-file=Caddyfile
 kubectl create configmap geo-rest-config --from-file=geo-rest-config.toml
 ```
 
+## Добавляем secrets
+```
+kubectl create -f tarantool-secret.yml
+```
+
 ## Добавляем сервисы
 ```
 kubectl create -f elastic-service.yml
