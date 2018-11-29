@@ -32,7 +32,13 @@ get:
   description: |
     Search all couriers in the specific area. There are 3 options: circle, box and circle around adress.
   parameters:
-    - $ref: 'parameters.yml#/GeoFilter'
+  - $ref: 'parameters.yml#/GeoFilter'
+  - in: query
+    name: active_only
+    schema:
+      default: false
+      type: bool
+    description: Return only active couriers
   responses:
     '200':
       description: OK
