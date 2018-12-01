@@ -25,6 +25,7 @@ GeoFilter:
     oneOf:
     - $ref: 'schemas.yml#/Circle'
     - $ref: 'schemas.yml#/Box'
+    - $ref: 'schemas.yml#/OSMEntity'
 
 Suggestion:
   in: query

@@ -167,6 +167,24 @@ Circle:
   - radius
 
 
+OSMEntity:
+  type: object
+  description: |
+    OSM object unique key
+  properties:
+    osm_id:
+      description: osm_id of object
+      type: number
+      format: int64
+      example: 1000
+    osm_type:
+      description: osm_type of object
+      type: string
+      example: R
+  required:
+  - osm_id
+  - osm_type
+
 Box:
   type: object
   description: |
