@@ -59,6 +59,12 @@ components:
       $ref: 'schemas.yml#/HistoryPoints'
     Error:
       $ref: 'schemas.yml#/Error'
+    Circle:
+      $ref: 'schemas.yml#/Circle'
+    Box:
+      $ref: 'schemas.yml#/Box'
+    OSMEntity:
+      $ref: 'schemas.yml#/OSMEntity'
 
 servers:
 - description: SwaggerHub API Auto Mocking
